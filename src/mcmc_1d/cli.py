@@ -32,8 +32,9 @@ def _plot_summary(samples: np.ndarray, burn_in: int, thin: int, output: str, sho
     effective_burn_in = min(max(0, burn_in), max(0, len(samples) - 1))
     posterior = samples[effective_burn_in::max(1, thin)]
     xs = np.linspace(np.min(posterior) - 1.0, np.max(posterior) + 1.0, 1000)
-    px = target_pdf(xs)
-    px = px / np.trapezoid(px, xs)
+    px = np.asarray(target_pdf(xs), dtype=float)
+    norm = float(np.trapezoid(px, xs))
+    px = px / norm if norm != 0.0 else px
 
     fig = plt.figure(figsize=(12, 9))
     gs = gridspec.GridSpec(3, 2, height_ratios=[1, 1, 1])
