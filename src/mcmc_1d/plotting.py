@@ -50,10 +50,10 @@ def plot_histogram_vs_target(samples, log_pdf, x_range=(-3, 3), num_points=1000)
 
 def plot_autocorrelation(samples, max_lag=100):
     """Plot the autocorrelation function of the samples."""
-    rho = acf(samples, nlags=max_lag, fft=True)
+    rho = acf(samples, max_lag=max_lag)
     
     plt.figure(figsize=(8, 4))
-    plt.stem(range(len(rho)), rho, use_line_collection=True)
+    plt.stem(range(len(rho)), rho)
     plt.title('Autocorrelation Function')
     plt.xlabel('Lag')
     plt.ylabel('Autocorrelation')
