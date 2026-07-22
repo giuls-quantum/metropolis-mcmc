@@ -1,5 +1,15 @@
-""" Metropolis-Hastings MCMC sampling package for 1D distributions. """
+"""1D Metropolis-Hastings MCMC Sampler and Diagnostics."""
 
-from .sampler import metropolis as MetropolisSampler
+from .results import MCMCResults
+from .diagnostics import compute_summary, compute_ess, compute_rhat
+from .plotting import plot_trace, plot_posterior, plot_autocorr
 
-__all__ = ["MetropolisSampler"]
+__all__ = [
+    "MCMCResults",
+    "compute_summary",
+    "compute_ess",
+    "compute_rhat",
+    "plot_trace",
+    "plot_posterior",
+    "plot_autocorr",
+]
