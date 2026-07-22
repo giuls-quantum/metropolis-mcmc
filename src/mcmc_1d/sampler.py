@@ -7,7 +7,7 @@ from typing import Callable
 import numpy as np
 
 # Import custom dataclass for structured output of MCMC runs
-from src.mcmc_1d.results import MCMCResult
+from src.mcmc_1d.results import MCMCResults
 
 def metropolis(
         log_pdf: Callable[[float], float], 
@@ -15,7 +15,7 @@ def metropolis(
         n_steps: int, 
         sigma: float, 
         rng: np.random.Generator | None = None,
-    ) -> MCMCResult:
+    ) -> MCMCResults:
     """Run the Metropolis-Hastings sampler.
     
     Args:
@@ -45,4 +45,4 @@ def metropolis(
             x[i] = current
 
     acceptance_rate = n_accept / (n_steps - 1)
-    return MCMCResult(samples=x, acceptance_rate=acceptance_rate)
+    return MCMCResults(samples=x, acceptance_rate=acceptance_rate)

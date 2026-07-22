@@ -5,7 +5,7 @@ Script to run the MCMC experiment and compute diagnostics for a 1D target distri
 import numpy as np
 
 from src.mcmc_1d.diagnostics import summarize_diagnostics
-from src.mcmc_1d.results import MCMCResult, MCMCDiagnostics
+from src.mcmc_1d.results import MCMCResults, MCMCDiagnostics
 from src.mcmc_1d.sampler import metropolis
 from src.mcmc_1d.targets import quartic_log_target
 
@@ -16,7 +16,7 @@ def run_experiment(
         sigma: float,
         seed: int | None = None,
         max_lag: int = 5000,
-) -> tuple[MCMCResult, MCMCDiagnostics]:
+) -> tuple[MCMCResults, MCMCDiagnostics]:
     """
     Run the MCMC experiment and return results and diagnostics.
 
