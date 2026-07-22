@@ -1,0 +1,12 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code workspace settings
+.vscode/
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
