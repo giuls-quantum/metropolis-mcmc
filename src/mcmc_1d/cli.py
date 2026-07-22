@@ -8,7 +8,7 @@ import matplotlib.gridspec as gridspec
 import matplotlib.pyplot as plt
 import numpy as np
 
-from src.mcmc_1d.diagnostics import autocorr
+from src.mcmc_1d.diagnostics import autocorrelation as autocorr
 from src.mcmc_1d.experiment import run_experiment
 from src.mcmc_1d.targets import f as target_pdf
 
