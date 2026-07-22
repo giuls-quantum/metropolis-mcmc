@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metropolis-mcmc"
+version = "0.1.0"
+description = "A modular 1D Metropolis-Hastings MCMC implementation"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "giuls-quantum" }
+]
+dependencies = [
+    "numpy>=1.22.0",
+    "scipy>=1.8.0",
+    "matplotlib>=3.5.0",
+    "arviz>=0.15.0",
+    "pandas>=1.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+mcmc-1d = "mcmc_1d.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
