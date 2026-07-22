@@ -4,7 +4,7 @@ import numpy as np
 
 from src.mcmc_1d.targets import quartic_log_target, f
 from src.mcmc_1d.sampler import metropolis
-from src.mcmc_1d.results import MCMCResult
+from src.mcmc_1d.results import MCMCResults
 
 
 def test_metropolis_returns_mcmc_result():
@@ -17,7 +17,7 @@ def test_metropolis_returns_mcmc_result():
         rng=np.random.default_rng(123),
     )
 
-    assert isinstance(result, MCMCResult)
+    assert isinstance(result, MCMCResults)
     assert isinstance(result.samples, np.ndarray)
     assert result.samples.shape == (10,)
     assert isinstance(result.acceptance_rate, float)
